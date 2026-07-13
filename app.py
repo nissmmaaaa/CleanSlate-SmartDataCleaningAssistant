@@ -1,12 +1,20 @@
 import streamlit as st
 from utils.summary import show_summary
+from utils.quality import show_quality_report
 
 from utils.loader import load_csv
 st.set_page_config(page_title="CleanSlate", page_icon="🧹", layout="wide")
+st.sidebar.title("CleanSlate")
+st.sidebar.markdown("---")
+st.sidebar.header("Navigation")
+st.sidebar.write("Overview ")
+st.sidebar.write("Data Quality Report")
+st.sidebar.write("Visualizations")
+st.sidebar.write("Export")
 st.title("CleanSlate")
 st.subheader("Transform your data effortlessly with CleanSlate! 🧹")
-st.write("Upload a CSV file to clean, analyze, and visualize your dataset in seconds.")
-uploaded_file = st.file_uploader("Upload your CSV file", type=["csv"])  
+st.markdown("---")
+uploaded_file = st.file_uploader("📂 Upload your CSV file", type=["csv"])  
 if uploaded_file is not None:
     df=load_csv(uploaded_file)
     st.success("File uploaded successfully!")
@@ -14,3 +22,4 @@ if uploaded_file is not None:
     st.dataframe(df.head(10),use_container_width=True)
     st.caption("Showing first 10 rows of the dataset.")
     show_summary(df)
+    show_quality_report(df)
