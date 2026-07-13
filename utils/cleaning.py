@@ -100,3 +100,26 @@ def show_missing_values(df):
             st.session_state.df = cleaned_df
             st.success("Missing values cleaned successfully!")
             st.rerun()
+def show_duplicate_removal(df):
+
+    st.subheader("Duplicate Row Removal")
+
+    duplicate_count = df.duplicated().sum()
+
+    st.write(f"Duplicate Rows Found: **{duplicate_count}**")
+
+    if duplicate_count == 0:
+        st.success("No duplicate rows found!")
+        return
+
+    if st.button("Remove Duplicates"):
+
+        cleaned_df = df.drop_duplicates()
+
+        st.session_state.df = cleaned_df
+
+        st.success(
+            f"Removed {duplicate_count} duplicate rows successfully!"
+        )
+
+        st.rerun()

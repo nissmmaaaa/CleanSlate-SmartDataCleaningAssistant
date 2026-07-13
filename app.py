@@ -2,6 +2,7 @@ import streamlit as st
 from utils.summary import show_summary
 from utils.quality import show_quality_report
 from utils.cleaning import show_missing_values
+from utils.cleaning import show_duplicate_removal
 from utils.loader import load_csv
 st.set_page_config(page_title="CleanSlate", page_icon="🧹", layout="wide")
 st.sidebar.title("CleanSlate")
@@ -27,3 +28,4 @@ if uploaded_file is not None:
     show_summary(df)
     show_quality_report(df)
     show_missing_values(df)
+    show_duplicate_removal(df)
