@@ -1,5 +1,6 @@
 import pandas as pd
 import streamlit as st
+import numpy as np
 
 
 def show_missing_values(df):
@@ -123,3 +124,37 @@ def show_duplicate_removal(df):
         )
 
         st.rerun()
+def show_outlier_detection(df):
+
+    st.subheader("Outlier Detection")
+
+    numeric_df = df.select_dtypes(include=np.number)
+
+    if numeric_df.empty:
+        st.info("No numeric columns found.")
+        return
+
+    outlier_report = {}
+
+    for column in numeric_df.columns:
+
+        Q1 = numeric_df[column].quantile(0.25)
+        Q3 = numeric_df[column].quantile(0.75)
+
+        IQR = Q3 - Q1
+
+        lower = Q1 - 1.5 * IQR
+        upper = Q3 + 1.5 * IQR
+
+        count = ((numeric_df[column] < lower) |
+                 (numeric_df[column] > upper)).sum()
+
+        outlier_report[column] = count
+
+    st.dataframe(
+        {
+            "Column": outlier_report.keys(),
+            "Outliers": outlier_report.values()
+        },
+        use_container_width=True
+    )
