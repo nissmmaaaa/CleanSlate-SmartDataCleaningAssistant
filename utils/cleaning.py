@@ -158,3 +158,27 @@ def show_outlier_detection(df):
         },
         use_container_width=True
     )
+    if st.button("🗑 Remove Outliers"):
+
+        cleaned_df = df.copy()
+
+        for column in numeric_df.columns:
+
+            Q1 = cleaned_df[column].quantile(0.25)
+            Q3 = cleaned_df[column].quantile(0.75)
+
+            IQR = Q3 - Q1
+
+            lower_bound = Q1 - (1.5 * IQR)
+            upper_bound = Q3 + (1.5 * IQR)
+
+            cleaned_df = cleaned_df[
+                (cleaned_df[column] >= lower_bound) &
+                (cleaned_df[column] <= upper_bound)
+            ]
+
+        st.session_state.df = cleaned_df
+
+        st.success(" Outliers removed successfully!")
+
+        st.rerun()

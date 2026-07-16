@@ -4,6 +4,8 @@ from utils.quality import show_quality_report
 from utils.cleaning import show_missing_values
 from utils.cleaning import show_duplicate_removal
 from utils.cleaning import show_outlier_detection
+from utils.visualizations import show_histogram
+from utils.export import export_data
 
 from utils.loader import load_csv
 st.set_page_config(page_title="CleanSlate", page_icon="🧹", layout="wide")
@@ -34,3 +36,7 @@ if uploaded_file is not None:
     show_missing_values(df)
     show_duplicate_removal(df)
     show_outlier_detection(df)
+    st.markdown("---")
+    st.subheader("Visualizations")
+    show_histogram(df)
+    export_data(df)
