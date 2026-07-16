@@ -143,24 +143,26 @@ streamlit run app.py
 
 ### Home
 
-assets/screenshots/image.png
+<img width="1471" height="660" alt="image" src="https://github.com/user-attachments/assets/b83bca36-6921-4878-994b-843bf81bde15" />
+
 
 ### Dataset Overview
+<img width="1474" height="618" alt="image" src="https://github.com/user-attachments/assets/9727b755-0520-48f5-8959-4fa60df47a7a" />
+<img width="1490" height="625" alt="image" src="https://github.com/user-attachments/assets/af47121a-77a0-4874-bae9-6f9abf2928e4" />
 
-assets/screenshots/image-1.png
-assets/screenshots/image-2.png
 ### Data Cleaning
+<img width="1481" height="559" alt="image" src="https://github.com/user-attachments/assets/32d1eddc-7172-4603-a428-80133aa52fdd" />
+<img width="1459" height="468" alt="image" src="https://github.com/user-attachments/assets/4532ca42-a306-4250-8215-5e19730f6cb1" />
 
-assets/screenshots/image-3.png
-assets/screenshots/image-4.png
 
 
 ### Visualizations
-assets/screenshots/image-5.png
-assets/screenshots/image-6.png
+<img width="1475" height="696" alt="image" src="https://github.com/user-attachments/assets/44d03ab5-ba50-4ead-abdb-265ad01638c4" />
+<img width="1455" height="682" alt="image" src="https://github.com/user-attachments/assets/9e18fc24-8cb4-40f7-a30b-d9e18c8fc41e" />
+
 
 ### Export
-assets/screenshots/image-7.png
+<img width="1504" height="685" alt="image" src="https://github.com/user-attachments/assets/b5228b3a-d657-42fe-857c-543b7687fbee" />
 
 ---
 
