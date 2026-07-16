@@ -69,6 +69,6 @@ if uploaded_file is not None:
         show_bar_chart(df)
         show_pie_chart(df)
 
-    elif page == "⬇Export":
+    elif page == "Export":
 
-        export_data(df, uploaded_file.name)
+        export_data(df)
