@@ -184,4 +184,4 @@ streamlit run app.py
 
 B.Tech Artificial Intelligence & Data Science
 
-GitHub: https://github.com/<nissmmaaaa>
+GitHub: https://github.com/nissmmaaaa
